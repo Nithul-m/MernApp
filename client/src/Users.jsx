@@ -13,7 +13,7 @@ function Users() {
     },[])
 
     const handleDelete = (id) => {
-        axios.delete('http://https://backend-mern-oh0g.onrender.com/deleteUser/'+id)
+        axios.delete('https://backend-mern-oh0g.onrender.com/deleteUser/'+id)
         .then(res => {console.log(res)
             window.location.reload()
         })
