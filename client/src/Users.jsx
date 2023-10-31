@@ -2,7 +2,14 @@ import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+
 function Users() {
+    app.use((req, res, next) => {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+        res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        next();
+      })
     const [users,setUsers] = useState([])
     
     useEffect(()=> {

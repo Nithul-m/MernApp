@@ -3,6 +3,12 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
 function CreateUser() {
+    app.use((req, res, next) => {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+        res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        next();
+      })
     const [name,setName] = useState()
     const [email,setEmail] = useState()
     const [age,setAge] = useState()
